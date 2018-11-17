@@ -37,6 +37,8 @@ function objToSql(ob) {
 
 // Object for all our SQL statement functions.
 var orm = {
+
+  //this function returns all of the burgers from the table
   selectAll: function (tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function (err, result) {
@@ -50,7 +52,7 @@ var orm = {
 
 
 
-
+  //this fucntion adds a new burger to the table
   insertOne: function (table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 
@@ -73,12 +75,12 @@ var orm = {
 
 
 
+  //***NOTWORKING***
+  //it should go in and change the boolean value of devoured on the selected id to true.
+  updateOne: function (condition, cb) {
+    var queryString = "UPDATE burgers";
 
-  // An example of objColVals would be {name: panther, sleepy: true}
-  updateOne: function (table, condition, cb) {
-    var queryString = "UPDATE " + table;
-
-    queryString += " SET devoured = true"
+    queryString += " SET  devoured = true";
     queryString += " WHERE ";
     queryString += condition;
 
@@ -94,5 +96,5 @@ var orm = {
   }
 };
 
-
+//exports the ORM
 module.exports = orm;

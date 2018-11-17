@@ -1,11 +1,11 @@
+//Sets up your dependencies 
 var express = require("express");
-
 var router = express.Router();
-
-// Import the model (cat.js) to use its database functions.
 var burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
+
+//this sets up the get on the "/" page and returns all of the responses
 router.get("/", function(req, res) {
   burger.selectAll(function(data) {
     var hbsObject = {
@@ -16,33 +16,31 @@ router.get("/", function(req, res) {
   });
 });
 
-
-
-
-
-
-
-router.post("/", function(req, res) {
+//posts new burger row to the table
+router.post("/burgers", function(req, res) {
   burger.insertOne([
-    "burger_name", "devoured"
+    "burger_name"
   ], [
-    req.body.burger_name, req.body.devoured
+    req.body.burger_name
   ], function(data) {
-    // Send back the ID of the new quote
     res.redirect("/");
   });
 });
 
 
 
-
-router.put("/:id", function(req, res) {
-  var condition = req.params.id;
+//***NOT WORKING YET**
+//this should create our condition of id = req.params.id
+router.put("/burgers/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
 
   console.log("condition", condition);
 
-  burger.updateOne(condition, function(data) {
-    res.redirect("/")
+  burger.updateOne(condition, function(result) {
+    // res.redirect("/")
+    res.json({
+      msg: "devoured burger",
+    })
   });
 });
 
