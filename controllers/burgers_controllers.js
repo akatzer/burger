@@ -27,9 +27,6 @@ router.post("/burgers", function(req, res) {
   });
 });
 
-
-
-//***NOT WORKING YET**
 //this should create our condition of id = req.params.id
 router.put("/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;

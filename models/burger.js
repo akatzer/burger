@@ -17,7 +17,6 @@ var burger = {
     });
   },
 
-  //***NOT WORKING***
   //Supposed to take the condition from the ORM and run it through the burger controller.
   updateOne: function (condition, cb) {
     orm.updateOne(condition, function (res) {

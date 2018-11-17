@@ -50,8 +50,6 @@ var orm = {
     });
   },
 
-
-
   //this fucntion adds a new burger to the table
   insertOne: function (table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
@@ -73,9 +71,6 @@ var orm = {
     });
   },
 
-
-
-  //***NOTWORKING***
   //it should go in and change the boolean value of devoured on the selected id to true.
   updateOne: function (condition, cb) {
     var queryString = "UPDATE burgers";
