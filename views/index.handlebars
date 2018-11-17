@@ -1,34 +1,30 @@
 <div class="container-fluid">
     <img src="../assets/img/burg.jpg" width="200px">
-
+    
     <div class="card">
-        <h1>Eat-Da-Burger</h1>
+<h1>Eat-Da-Burger</h1>
     </div>
-
+    
 
 
     <div class="container-fluid">
         <div class="card">
             <h2>Burgers Ordered</h2>
 
-            <ul>
+            
                 {{#each burgers}}
                 {{#unless this.devoured}}
+                
+    <li>                    {{this.burger_name}}
 
+                    {{!-- <form value="/burgers/{{this.id}}?_method=PUT" method="POST"> --}}
+                        <button type="button" class="eat-burger btn-primary" id={{this.id}}>Eat Da' Burger</button>
+                        {{!-- </form> --}}
 
-                {{this.burger_name}}
-
-                {{!-- <form value="/burgers/{{this.id}}?_method=PUT" method="POST"> --}}
-                    <button type="button" class="eat-burger btn-primary" id={{this.id}}>Eat Da' Burger</button>
-                    {{!-- </form> --}}
-
-
+                </li>
                 {{/unless}}
                 {{/each}}
-
-            </ul>
-
-
+            
         </div>
 
 
