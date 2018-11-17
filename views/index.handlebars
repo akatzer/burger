@@ -11,21 +11,24 @@
         <div class="card">
             <h2>Burgers Ordered</h2>
 
-            <ul>
+            
                 {{#each burgers}}
                 {{#unless this.devoured}}
-                <li>
+                
+<ul>
 
-                    {{this.burger_name}}
+ {{this.burger_name}}
 
                     {{!-- <form value="/burgers/{{this.id}}?_method=PUT" method="POST"> --}}
-                        <button type="button" class="eat-burger" id={{this.id}}>Eat Da' Burger</button>
+                        <button type="button" class="btn-primary" ={{this.id}}>Eat Da' Burger</button>
                         {{!-- </form> --}}
+</ul>
+                   
 
-                </li>
+                
                 {{/unless}}
                 {{/each}}
-            </ul>
+            
         </div>
 
 

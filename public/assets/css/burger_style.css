@@ -10,14 +10,12 @@
     text-align: center;
     margin: auto;
     width: 100%;
-    background-color: #FFFECD;
-    
-   
+    background-color: #FFFECD;  
 }
+
 
 html {
     background-color: #FFFECD;
-    width: 100%
 }
 
 .container-fluid {
@@ -29,9 +27,9 @@ html {
 div.card {
     background-color: #FFFECD;
     padding: 20px;
-    margin: 20px;
+    margin: 20px auto;
     border-width: 5px;
-   
+    width: 50%;   
 }
 
 
