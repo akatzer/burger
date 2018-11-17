@@ -1,16 +1,21 @@
 <div class="container-fluid">
     <img src="../assets/img/burg.jpg" width="200px">
-    <h1>Eat-Da-Burger</h1>
+    
+    <div class="card">
+<h1>Eat-Da-Burger</h1>
+    </div>
+    
 
-    <div class="container">
-        <div class="ordered">
+
+    <div class="container-fluid">
+        <div class="card">
             <h2>Burgers Ordered</h2>
 
             <ul>
                 {{#each burgers}}
                 {{#unless this.devoured}}
                 <li>
-                    {{this.id}}
+
                     {{this.burger_name}}
 
                     {{!-- <form value="/burgers/{{this.id}}?_method=PUT" method="POST"> --}}
@@ -23,34 +28,41 @@
             </ul>
         </div>
 
-        <div class="devoured">
+
+
+        <div class="card">
             <h2>Burgers Devoured</h2>
 
             {{#each burgers}}
             {{#if this.devoured}}
             <li>
-                {{this.id}}
+
                 {{this.burger_name}}
 
             </li>
             {{/if}}
             {{/each}}
         </div>
+
     </div>
 
 
 
-    <div class="add">
-        <h2>Add A Burger</h2>
 
-        <form class="create-update-form" action="/burgers" method="POST">
+    <div class="container-fluid">
 
-            <div class="form-group">
-                <input type="text" id="ca" name="burger_name" placeholder="Enter Burger Name">
-            </div>
+        <div class="card">
+            <h2>Add A Burger</h2>
 
-            <button class="btn-primary" type="submit">Order Da' Burger</button>
-        </form>
+            <form class="create-update-form" action="/burgers" method="POST">
 
+                <div class="form-group">
+                    <input type="text" id="ca" name="burger_name" placeholder="Enter Burger Name">
+                </div>
+
+                <button class="btn-primary" type="submit">Order Da' Burger</button>
+            </form>
+
+        </div>
     </div>
 </div>

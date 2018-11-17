@@ -1,2 +1,2 @@
-insert into burgers (name) values ("Royale With Cheese")
-insert into burgers (name) values ("Big Kahuna Burger")
+insert into burgers (burger_name) values ("Royale With Cheese");
+insert into burgers (burger_name) values ("Big Kahuna Burger")
